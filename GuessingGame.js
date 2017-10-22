@@ -44,7 +44,7 @@ Game.prototype.playersGuessSubmission = function(num) {
 
 Game.prototype.checkGuess = function() {
     if (this.winningNumber === this.playersGuess) {
-        $('#subtitle').text('Hit reset to play again!');
+        $('#subtitle').text('Choose \'Let\'s start over\' to play again!');
         $('#hint, #submit').prop("disabled",true);   
         return 'WooHoo! You Won!';
     }  else if (this.pastGuesses.indexOf(this.playersGuess) >= 0) {
@@ -54,7 +54,7 @@ Game.prototype.checkGuess = function() {
         this.pastGuesses.push(this.playersGuess);
     }
     if (this.pastGuesses.length >= 5) {
-        $('#subtitle').text('Hit reset to try again!');
+        $('#subtitle').text('Choose \'Let\'s start over\' to try again!');
         $('#hint, #submit').prop("disabled",true);     
         return 'Sorry, looks like you lost.';
     } 
